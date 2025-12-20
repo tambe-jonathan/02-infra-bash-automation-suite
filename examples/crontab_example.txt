@@ -1,0 +1,3 @@
+0 * * * * /opt/bash-toolkit/scripts/system_health.sh >> /var/log/health.log
+0 0 * * * /opt/bash-toolkit/scripts/cleanup_logs.sh
+
