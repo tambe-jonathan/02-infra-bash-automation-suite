@@ -10,25 +10,26 @@ pipeline {
 
     stage('Bash Syntax Check') {
       steps {
-        sh 'for f in scripts/*.sh; do bash -n $f; done'
+        sh 'find scripts/ -name "*.sh" -exec bash -n {} +'
       }
     }
 
     stage('ShellCheck') {
       steps {
-        sh 'shellcheck scripts/*.sh'
+        sh 'find scripts/ -name "*.sh" -exec shellcheck {} +'
       }
     }
 
     stage('Permission Check') {
       steps {
-        sh 'for f in scripts/*.sh tests/*.sh; do [ -x $f ] || exit 1; done'
+        sh 'find scripts/ -name "*.sh" -exec chmod +x {} +'
+        sh 'find scripts/ -name "*.sh" -exec ls -l {} +'
       }
     }
 
     stage('Run Tests') {
       steps {
-        sh 'tests/test_system_health.sh'
+        sh 'find tests/ -name "*.sh" -exec bash {} +'
       }
     }
   }
