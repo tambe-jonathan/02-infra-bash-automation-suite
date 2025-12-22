@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  runner:
+    build: .
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    command: bash
+

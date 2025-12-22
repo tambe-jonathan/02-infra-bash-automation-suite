@@ -1,0 +1,39 @@
+name: CI Enforcement Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install ShellCheck
+        run: sudo apt-get install -y shellcheck
+
+      - name: Run Bash Syntax Validation (bash -n)
+        run: |
+          echo "Validating script syntax..."
+          find . -name "*.sh" -exec bash -n {} +
+
+      - name: Run ShellCheck Static Analysis
+        run: |
+          echo "Running ShellCheck..."
+          find . -name "*.sh" -exec shellcheck {} +
+
+      - name: Verify Executable Permissions
+        run: |
+          echo "Checking if scripts are executable..."
+          find . -name "*.sh" -exec ls -l {} +
+          # This step fails if any .sh file is not executable
+          for file in $(find . -name "*.sh"); do
+            if [ ! -x "$file" ]; then
+              echo "ERROR: $file is not executable. Run 'chmod +x $file'"
+              exit 1
+            fi
+          done

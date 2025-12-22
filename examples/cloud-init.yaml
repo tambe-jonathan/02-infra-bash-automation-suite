@@ -1,0 +1,10 @@
+#cloud-config
+package_update: true
+packages:
+  - git
+
+runcmd:
+  - git clone https://github.com/tambe-devops/02-bash-automation-toolkit.git /opt/bash-toolkit
+  - chmod +x /opt/bash-toolkit/scripts/*.sh
+  - /opt/bash-toolkit/scripts/system_health.sh >> /var/log/health.log
+
