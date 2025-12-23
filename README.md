@@ -27,10 +27,10 @@ This repository demonstrates high-quality Bash automation backed by a declarativ
 
 | Automation Task | Implementation & Live Result |
 | :--- | :--- |
-| **Jenkins Pipeline**<br>[View Jenkinsfile](./Jenkinsfile) | <img src="docs/assets/jenkins-run.png" width="500" alt="Jenkins Success"> |
-| **Automated Testing**<br>[View Test Suite](./tests/) | <img src="docs/assets/github-actions.png" width="500" alt="GitHub Actions Success"> |
-| **Code Quality**<br>ShellCheck 0.9.0 |  **Linting Passed:** 0 Errors / 0 Warnings |
-> **Pro-Tip:** Click on the screenshots to zoom into the specific build steps and log outputs.
+| **Jenkins Pipeline**<br> | <img src="docs/assets/jenkins-run.png" width="500"> |
+| **Automated Testing**<br> | <img src="docs/assets/github-actions.png" width="500"> |
+| **Code Quality** |  **Linting Passed:** ShellCheck 0.9.0 |
+> **Tip:** Click on the screenshots to zoom into the specific build steps.
 <details>
 <summary><b>📺 Click to see a live demo of the scripts in action</b></summary>
 
@@ -233,7 +233,7 @@ docker-compose run runner
 
 ---
 
-## 📄 License & Attribution
+##  License & Attribution
 
 **Project Type:** Internal-use   
 **Purpose:** Designed for education, demonstration, and showcasing enterprise-grade DevOps practices.
