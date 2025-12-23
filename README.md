@@ -21,14 +21,16 @@ This repository demonstrates how Bash is treated as a **first-class engineering 
 This repository demonstrates high-quality Bash automation backed by a declarative CI/CD pipeline.
 * **Production-Ready Validation:** Every commit undergoes automated **Bash Syntax Checking** and **ShellCheck** linting.
 * **Automated Testing:** Integrated test suite verifies system health logic and monitoring thresholds.
-* **Infrastructure as Code:** Managed via a `Jenkinsfile` for automated environment setup and permission handling.
+* **Continious Intergration:** Managed via a `Jenkinsfile` for automated environment setup and permission handling.
 
-| Capability | Proof of Implementation |
+###  CI/CD & Infrastructure Validation
+
+| Automation Task | Implementation & Live Result |
 | :--- | :--- |
-| **CI/CD Pipeline** | [View Declarative Jenkinsfile](./Jenkinsfile) |
-| **Automated Tests** | [View Test Suite](./tests/) |
-| **Linting Standards** | Build logs verified with ShellCheck 0.9.0 |
-
+| **Jenkins Pipeline**<br>[View Jenkinsfile](./Jenkinsfile) | <img src="docs/assets/jenkins-run.png" width="500" alt="Jenkins Success"> |
+| **Automated Testing**<br>[View Test Suite](./tests/) | <img src="docs/assets/github-actions.png" width="500" alt="GitHub Actions Success"> |
+| **Code Quality**<br>ShellCheck 0.9.0 |  **Linting Passed:** 0 Errors / 0 Warnings |
+> **Pro-Tip:** Click on the screenshots to zoom into the specific build steps and log outputs.
 <details>
 <summary><b>📺 Click to see a live demo of the scripts in action</b></summary>
 
