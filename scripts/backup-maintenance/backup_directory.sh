@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SOURCE=$1
-DEST="/backup"
+DEST="./backups_archive" 
 DATE=$(date +%F)
 
 if [ -z "$SOURCE" ]; then
@@ -10,6 +10,7 @@ if [ -z "$SOURCE" ]; then
 fi
 
 mkdir -p "$DEST"
-tar -czf "$DEST/backup-$DATE.tar.gz" "$SOURCE"
-echo "[SUCCESS] Backup created at $DEST/backup-$DATE.tar.gz"
 
+tar -czf "$DEST/backup-$DATE.tar.gz" "$SOURCE"
+
+echo "[SUCCESS] Backup created at $DEST/backup-$DATE.tar.gz"
