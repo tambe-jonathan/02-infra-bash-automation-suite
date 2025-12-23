@@ -32,7 +32,7 @@ This repository demonstrates high-quality Bash automation backed by a declarativ
 <details>
 <summary><b>📺 Click to see a live demo of the scripts in action</b></summary>
 
-![Script Execution Demo](https://your-link-here.gif)
+![Script Execution Demo](./docs/assets/demo.gif)
 </details>
 
 ---
