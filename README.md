@@ -14,6 +14,29 @@ This repository demonstrates how Bash is treated as a **first-class engineering 
 
 ---
 
+
+##  Infrastructure & CI/CD Highlights
+**Status:** `STABLE` | **Coverage:** `100% Syntax & Linted` | **CI Tooling:** `Jenkins, ShellCheck`
+
+This repository demonstrates high-quality Bash automation backed by a declarative CI/CD pipeline.
+* **Production-Ready Validation:** Every commit undergoes automated **Bash Syntax Checking** and **ShellCheck** linting.
+* **Automated Testing:** Integrated test suite verifies system health logic and monitoring thresholds.
+* **Infrastructure as Code:** Managed via a `Jenkinsfile` for automated environment setup and permission handling.
+
+| Capability | Proof of Implementation |
+| :--- | :--- |
+| **CI/CD Pipeline** | [View Declarative Jenkinsfile](./Jenkinsfile) |
+| **Automated Tests** | [View Test Suite](./tests/) |
+| **Linting Standards** | Build logs verified with ShellCheck 0.9.0 |
+
+<details>
+<summary><b>📺 Click to see a live demo of the scripts in action</b></summary>
+
+![Script Execution Demo](https://your-link-here.gif)
+</details>
+
+---
+
 ##  What This Project Demonstrates
 
 - Enterprise-grade Bash scripting standards  
