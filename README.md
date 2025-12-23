@@ -6,7 +6,7 @@ This repository provides a comprehensive suite of production-ready Bash automati
 
 ##  Executive Summary
 
-The **Bash Automation Toolkit for DevOps Engineers** is a production-ready collection of Linux/Bash automation scripts designed and structured to reflect **real-world enterprise DevOps environments**.
+The **Bash Automation suite for DevOps Engineers** is a production-ready collection of Linux/Bash automation scripts designed and structured to reflect **real-world enterprise DevOps environments**.
 
 This repository demonstrates how Bash is treated as a **first-class engineering asset**, governed by CI/CD, static analysis, containerization, cloud bootstrap automation, monitoring integration, and operational best practices.
 
@@ -15,24 +15,26 @@ This repository demonstrates how Bash is treated as a **first-class engineering 
 ---
 
 
-##  Infrastructure & CI/CD Highlights
+##  automation & CI/CD Highlights
 **Status:** `STABLE` | **Coverage:** `100% Syntax & Linted` | **CI Tooling:** `Jenkins, ShellCheck`
 
 This repository demonstrates high-quality Bash automation backed by a declarative CI/CD pipeline.
 * **Production-Ready Validation:** Every commit undergoes automated **Bash Syntax Checking** and **ShellCheck** linting.
 * **Automated Testing:** Integrated test suite verifies system health logic and monitoring thresholds.
-* **Infrastructure as Code:** Managed via a `Jenkinsfile` for automated environment setup and permission handling.
+* **Continious Intergration:** Managed via a `Jenkinsfile` for automated environment setup and permission handling.
 
-| Capability | Proof of Implementation |
+###  CI/CD & Infrastructure Validation
+
+| Automation Task | Implementation & Live Result |
 | :--- | :--- |
-| **CI/CD Pipeline** | [View Declarative Jenkinsfile](./Jenkinsfile) |
-| **Automated Tests** | [View Test Suite](./tests/) |
-| **Linting Standards** | Build logs verified with ShellCheck 0.9.0 |
-
+| **Jenkins Pipeline**<br> | <img src="docs/assets/jenkins-run.png" width="500"> |
+| **Automated Testing**<br> | <img src="docs/assets/github-actions.png" width="500"> |
+| **Code Quality** |  **Linting Passed:** ShellCheck 0.9.0 |
+> **Tip:** Click on the screenshots to zoom into the specific build steps.
 <details>
-<summary><b>📺 Click to see a live demo of the scripts in action</b></summary>
+<summary><b> Click to see a live demo of the scripts in action</b></summary>
 
-![Script Execution Demo](https://your-link-here.gif)
+![Script Execution Demo](./docs/assets/demo.gif)
 </details>
 
 ---
@@ -53,7 +55,7 @@ This repository demonstrates high-quality Bash automation backed by a declarativ
 ##  Repository Structure
 
 ```text
-02-bash-automation-toolkit/
+02-bash-automation-suite/
 │
 ├── scripts/                # Production automation scripts
 │   ├── cleanup_logs.sh
@@ -231,7 +233,17 @@ docker-compose run runner
 
 ---
 
-## 📄 License & Attribution
+##  Technical Challenge: Environment Agnostic Automation
+
+**The Problem:** Initial pipeline runs encountered `Permission Denied` errors within the Jenkins workspace. The scripts were originally designed for static system-level paths (`/backup`), which required elevated root privileges and failed within restricted CI/CD agent environments.
+
+**The Solution:** I refactored the suite to utilize **Dynamic Relative Pathing** and implemented automated workspace initialization via `mkdir -p`. 
+
+**The Result:** The suite is now fully **unprivileged and environment-agnostic**. It successfully executes across localized workstations, Jenkins nodes, and GitHub Actions runners without requiring `sudo` access, adhering to the **Principle of Least Privilege (PoLP)**.
+
+---
+
+##  License & Attribution
 
 **Project Type:** Internal-use   
 **Purpose:** Designed for education, demonstration, and showcasing enterprise-grade DevOps practices.
